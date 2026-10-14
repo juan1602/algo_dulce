@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/:ruta*",
-      "destination": "https://diaz-burguer-backend-production.up.railway.app/api/:ruta*"
+      "destination": "https://algodulce-production.up.railway.app/api/:ruta*"
     },
     {
       "source": "/imagenes/:ruta*",
-      "destination": "https://diaz-burguer-backend-production.up.railway.app/imagenes/:ruta*"
+      "destination": "https://algodulce-production.up.railway.app/imagenes/:ruta*"
     },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
