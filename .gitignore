@@ -25,3 +25,6 @@ dist-ssr
 
 .vercel
 .env*
+
+# Material de referencia que mandó el cliente (logo y carta originales)
+WhatsApp Image*

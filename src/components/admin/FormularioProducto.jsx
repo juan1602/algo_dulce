@@ -59,9 +59,9 @@ export function FormularioProducto({
     <div className="fixed inset-0 z-50 overflow-y-auto bg-black/70 px-4 py-8">
       <form
         onSubmit={manejarEnvio}
-        className="mx-auto w-full max-w-md rounded-2xl bg-negro-suave p-6 ring-1 ring-negro-borde"
+        className="mx-auto w-full max-w-md rounded-2xl bg-cacao-suave p-6 ring-1 ring-cacao-borde"
       >
-        <h3 className="mb-4 font-display text-2xl text-rojo uppercase">
+        <h3 className="mb-4 font-display text-2xl text-crema uppercase">
           {producto ? "Editar producto" : "Nuevo producto"}
         </h3>
 
@@ -73,7 +73,7 @@ export function FormularioProducto({
           value={nombre}
           onChange={(evento) => setNombre(evento.target.value)}
           required
-          className="mb-3 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+          className="mb-3 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
         />
 
         <label className="mb-1 block text-sm text-gray-400" htmlFor="descripcion-producto">
@@ -84,7 +84,7 @@ export function FormularioProducto({
           value={descripcion}
           onChange={(evento) => setDescripcion(evento.target.value)}
           rows={3}
-          className="mb-3 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+          className="mb-3 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
         />
 
         <label className="mb-1 block text-sm text-gray-400" htmlFor="precio-producto">
@@ -97,7 +97,7 @@ export function FormularioProducto({
           onChange={(evento) => setPrecio(evento.target.value)}
           required
           min="0"
-          className="mb-3 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+          className="mb-3 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
         />
 
         <label className="mb-1 block text-sm text-gray-400" htmlFor="categoria-producto">
@@ -107,7 +107,7 @@ export function FormularioProducto({
           id="categoria-producto"
           value={categoriaId}
           onChange={(evento) => setCategoriaId(evento.target.value)}
-          className="mb-3 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+          className="mb-3 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
         >
           {categorias.map((categoria) => (
             <option key={categoria.id} value={categoria.id}>
@@ -121,9 +121,9 @@ export function FormularioProducto({
             type="checkbox"
             checked={destacado}
             onChange={(evento) => setDestacado(evento.target.checked)}
-            className="h-4 w-4 accent-rojo"
+            className="h-4 w-4 accent-crema"
           />
-          Destacado (aparece en "Platos Destacados")
+          Destacado (aparece en "Favoritos de la casa")
         </label>
 
         <label className="mb-1 block text-sm text-gray-400">Foto</label>
@@ -144,20 +144,20 @@ export function FormularioProducto({
           <p className="mb-3 text-sm text-gray-400">Subiendo imagen...</p>
         )}
 
-        {error && <p className="mb-3 text-sm text-rojo">{error}</p>}
+        {error && <p className="mb-3 text-sm text-crema">{error}</p>}
 
         <div className="flex gap-3">
           <button
             type="button"
             onClick={onCancelar}
-            className="flex-1 rounded-full bg-negro py-2 text-sm ring-1 ring-negro-borde"
+            className="flex-1 rounded-full bg-cacao py-2 text-sm ring-1 ring-cacao-borde"
           >
             Cancelar
           </button>
           <button
             type="submit"
             disabled={guardando || subiendoImagen}
-            className="flex-1 rounded-full bg-rojo py-2 text-sm font-semibold uppercase text-white disabled:opacity-60"
+            className="flex-1 rounded-full bg-crema py-2 text-sm font-semibold uppercase text-cacao disabled:opacity-60"
           >
             {guardando ? "Guardando..." : "Guardar"}
           </button>

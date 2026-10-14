@@ -31,8 +31,8 @@ export function FormularioPassword({ onCerrar }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4">
-      <div className="w-full max-w-sm rounded-2xl bg-negro-suave p-6 ring-1 ring-negro-borde">
-        <h3 className="mb-4 font-display text-2xl text-rojo uppercase">
+      <div className="w-full max-w-sm rounded-2xl bg-cacao-suave p-6 ring-1 ring-cacao-borde">
+        <h3 className="mb-4 font-display text-2xl text-crema uppercase">
           Cambiar contraseña
         </h3>
 
@@ -44,7 +44,7 @@ export function FormularioPassword({ onCerrar }) {
             <button
               type="button"
               onClick={onCerrar}
-              className="w-full rounded-full bg-rojo py-2 text-sm font-semibold text-white uppercase transition hover:bg-rojo-oscuro"
+              className="w-full rounded-full bg-crema py-2 text-sm font-semibold text-cacao uppercase transition hover:bg-crema-oscura"
             >
               Cerrar
             </button>
@@ -61,7 +61,7 @@ export function FormularioPassword({ onCerrar }) {
               onChange={(evento) => setPasswordActual(evento.target.value)}
               required
               autoComplete="current-password"
-              className="mb-3 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+              className="mb-3 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
             />
 
             <label className="mb-1 block text-sm text-gray-400" htmlFor="password-nueva">
@@ -75,7 +75,7 @@ export function FormularioPassword({ onCerrar }) {
               required
               minLength={6}
               autoComplete="new-password"
-              className="mb-3 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+              className="mb-3 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
             />
 
             <label className="mb-1 block text-sm text-gray-400" htmlFor="password-confirmar">
@@ -88,23 +88,23 @@ export function FormularioPassword({ onCerrar }) {
               onChange={(evento) => setPasswordConfirmar(evento.target.value)}
               required
               autoComplete="new-password"
-              className="mb-4 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+              className="mb-4 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
             />
 
-            {error && <p className="mb-4 text-sm text-rojo">{error}</p>}
+            {error && <p className="mb-4 text-sm text-crema">{error}</p>}
 
             <div className="flex gap-3">
               <button
                 type="button"
                 onClick={onCerrar}
-                className="flex-1 rounded-full bg-negro py-2 text-sm ring-1 ring-negro-borde"
+                className="flex-1 rounded-full bg-cacao py-2 text-sm ring-1 ring-cacao-borde"
               >
                 Cancelar
               </button>
               <button
                 type="submit"
                 disabled={guardando}
-                className="flex-1 rounded-full bg-rojo py-2 text-sm font-semibold text-white uppercase disabled:opacity-60"
+                className="flex-1 rounded-full bg-crema py-2 text-sm font-semibold text-cacao uppercase disabled:opacity-60"
               >
                 {guardando ? "Guardando..." : "Guardar"}
               </button>

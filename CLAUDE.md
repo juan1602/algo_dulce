@@ -3,8 +3,9 @@
 ## Contexto
 Negocio "Algo Dulce". Proyecto adaptado a partir del menú digital de otro restaurante
 (Díaz Burguer): no debe quedar nada conectado a su repo, base de datos ni despliegues.
-Pendiente de definir (pasos 2 y 3 de la adaptación): qué vende, ubicación, WhatsApp,
-Instagram, horario, eslogan, logo y colores de marca.
+Postrería ("La casa del postre", desde 2023): tortas, postres, malteadas, waffles y meriendas.
+Colores de marca: café chocolate (`cacao` #3f1310) y crema (`crema` #fcd9b3), sacados del logo.
+Tipografías: Great Vibes (nombre/eslogan), Josefin Sans (títulos), Archivo (texto).
 Los clientes entran casi siempre desde el celular (link de Instagram o QR).
 
 ## Fases

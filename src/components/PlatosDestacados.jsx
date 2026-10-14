@@ -15,8 +15,8 @@ export function PlatosDestacados({ categorias, cargando }) {
 
   return (
     <section className="mx-auto max-w-5xl px-4 py-14 text-center">
-      <h2 className="font-display text-4xl tracking-wide text-rojo uppercase">
-        Platos Destacados
+      <h2 className="font-display text-4xl tracking-wide text-crema uppercase">
+        Favoritos de la casa
       </h2>
       <p className="mx-auto mt-2 max-w-md text-sm text-gray-400">
         Los favoritos de la casa
@@ -25,7 +25,7 @@ export function PlatosDestacados({ categorias, cargando }) {
         {destacados.map((producto) => (
           <article
             key={producto.id}
-            className="overflow-hidden rounded-2xl bg-negro-suave text-left ring-1 ring-negro-borde"
+            className="overflow-hidden rounded-2xl bg-cacao-suave text-left ring-1 ring-cacao-borde"
           >
             {producto.imagenUrl ? (
               <img
@@ -34,18 +34,18 @@ export function PlatosDestacados({ categorias, cargando }) {
                 className="aspect-video w-full object-cover"
               />
             ) : (
-              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-rojo/30 to-negro-suave text-4xl">
+              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-crema/30 to-cacao-suave text-4xl">
                 {obtenerIconoCategoria(producto.categoriaNombre)}
               </div>
             )}
             <div className="p-6">
-              <h3 className="font-display text-2xl text-white uppercase">
+              <h3 className="font-display text-2xl text-nata uppercase">
                 {producto.nombre}
               </h3>
               <p className="mt-2 text-sm leading-snug text-gray-400">
                 {producto.descripcion}
               </p>
-              <p className="mt-4 text-xl font-bold text-rojo">
+              <p className="mt-4 text-xl font-bold text-crema">
                 {formatPrecio(producto.precio)}
               </p>
             </div>

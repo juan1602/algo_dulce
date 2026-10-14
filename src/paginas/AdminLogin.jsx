@@ -35,12 +35,12 @@ export function AdminLogin() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-negro px-4">
+    <div className="flex min-h-screen items-center justify-center bg-cacao px-4">
       <form
         onSubmit={manejarEnvio}
-        className="w-full max-w-sm rounded-2xl bg-negro-suave p-8 ring-1 ring-negro-borde"
+        className="w-full max-w-sm rounded-2xl bg-cacao-suave p-8 ring-1 ring-cacao-borde"
       >
-        <h1 className="mb-6 text-center font-display text-3xl text-rojo uppercase">
+        <h1 className="mb-6 text-center font-display text-3xl text-crema uppercase">
           Panel Algo Dulce
         </h1>
 
@@ -52,7 +52,7 @@ export function AdminLogin() {
           value={usuario}
           onChange={(evento) => setUsuario(evento.target.value)}
           autoComplete="username"
-          className="mb-4 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+          className="mb-4 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
         />
 
         <label className="mb-1 block text-sm text-gray-400" htmlFor="contrasena">
@@ -64,15 +64,15 @@ export function AdminLogin() {
           value={contrasena}
           onChange={(evento) => setContrasena(evento.target.value)}
           autoComplete="current-password"
-          className="mb-4 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+          className="mb-4 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
         />
 
-        {error && <p className="mb-4 text-sm text-rojo">{error}</p>}
+        {error && <p className="mb-4 text-sm text-crema">{error}</p>}
 
         <button
           type="submit"
           disabled={enviando}
-          className="w-full rounded-full bg-rojo py-2 font-semibold tracking-wide text-white uppercase transition hover:bg-rojo-oscuro disabled:opacity-60"
+          className="w-full rounded-full bg-crema py-2 font-semibold tracking-wide text-cacao uppercase transition hover:bg-crema-oscura disabled:opacity-60"
         >
           {enviando ? "Ingresando..." : "Ingresar"}
         </button>

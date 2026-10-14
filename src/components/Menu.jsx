@@ -14,7 +14,7 @@ export function Menu({ categorias, cargando, error }) {
 
   return (
     <section id="menu" className="mx-auto max-w-3xl scroll-mt-20 px-4 pt-14 pb-16">
-      <h2 className="mb-8 text-center font-display text-4xl tracking-wide text-rojo uppercase">
+      <h2 className="mb-8 text-center font-display text-4xl tracking-wide text-crema uppercase">
         Explora el Menú
       </h2>
 
@@ -22,7 +22,7 @@ export function Menu({ categorias, cargando, error }) {
         <p className="text-center text-gray-400">Cargando menú...</p>
       )}
       {error && (
-        <p className="text-center text-rojo">
+        <p className="text-center text-crema">
           No se pudo cargar el menú. Intenta de nuevo más tarde.
         </p>
       )}
@@ -40,7 +40,7 @@ export function Menu({ categorias, cargando, error }) {
               <p className="text-xs tracking-widest text-gray-500 uppercase">
                 Menú
               </p>
-              <h3 className="font-display text-2xl text-white uppercase">
+              <h3 className="font-display text-2xl text-nata uppercase">
                 {categoriaActiva.nombre}
               </h3>
             </div>
@@ -55,7 +55,7 @@ export function Menu({ categorias, cargando, error }) {
                 key={producto.id}
                 type="button"
                 onClick={() => setProductoSeleccionado(producto)}
-                className="overflow-hidden rounded-xl bg-negro-suave text-left ring-1 ring-negro-borde transition hover:ring-rojo/50"
+                className="overflow-hidden rounded-xl bg-cacao-suave text-left ring-1 ring-cacao-borde transition hover:ring-crema/50"
               >
                 {producto.imagenUrl ? (
                   <img
@@ -64,18 +64,18 @@ export function Menu({ categorias, cargando, error }) {
                     className="aspect-square w-full object-cover"
                   />
                 ) : (
-                  <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-rojo/30 to-negro-suave text-4xl">
+                  <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-crema/30 to-cacao-suave text-4xl">
                     {obtenerIconoCategoria(categoriaActiva.nombre)}
                   </div>
                 )}
                 <div className="p-3">
-                  <p className="font-semibold text-white">{producto.nombre}</p>
+                  <p className="font-semibold text-nata">{producto.nombre}</p>
                   {producto.descripcion && (
                     <p className="mt-1 line-clamp-2 text-xs text-gray-400">
                       {producto.descripcion}
                     </p>
                   )}
-                  <p className="mt-1 font-bold text-rojo">
+                  <p className="mt-1 font-bold text-crema">
                     {formatPrecio(producto.precio)}
                   </p>
                 </div>

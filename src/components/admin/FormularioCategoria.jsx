@@ -22,9 +22,9 @@ export function FormularioCategoria({ categoria, onGuardar, onCancelar }) {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4">
       <form
         onSubmit={manejarEnvio}
-        className="w-full max-w-sm rounded-2xl bg-negro-suave p-6 ring-1 ring-negro-borde"
+        className="w-full max-w-sm rounded-2xl bg-cacao-suave p-6 ring-1 ring-cacao-borde"
       >
-        <h3 className="mb-4 font-display text-2xl text-rojo uppercase">
+        <h3 className="mb-4 font-display text-2xl text-crema uppercase">
           {categoria ? "Editar categoría" : "Nueva categoría"}
         </h3>
 
@@ -36,23 +36,23 @@ export function FormularioCategoria({ categoria, onGuardar, onCancelar }) {
           value={nombre}
           onChange={(evento) => setNombre(evento.target.value)}
           required
-          className="mb-4 w-full rounded-lg bg-negro px-3 py-2 text-white ring-1 ring-negro-borde outline-none focus:ring-rojo"
+          className="mb-4 w-full rounded-lg bg-cacao px-3 py-2 text-nata ring-1 ring-cacao-borde outline-none focus:ring-crema"
         />
 
-        {error && <p className="mb-3 text-sm text-rojo">{error}</p>}
+        {error && <p className="mb-3 text-sm text-crema">{error}</p>}
 
         <div className="flex gap-3">
           <button
             type="button"
             onClick={onCancelar}
-            className="flex-1 rounded-full bg-negro py-2 text-sm ring-1 ring-negro-borde"
+            className="flex-1 rounded-full bg-cacao py-2 text-sm ring-1 ring-cacao-borde"
           >
             Cancelar
           </button>
           <button
             type="submit"
             disabled={guardando}
-            className="flex-1 rounded-full bg-rojo py-2 text-sm font-semibold uppercase text-white disabled:opacity-60"
+            className="flex-1 rounded-full bg-crema py-2 text-sm font-semibold uppercase text-cacao disabled:opacity-60"
           >
             {guardando ? "Guardando..." : "Guardar"}
           </button>

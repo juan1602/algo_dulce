@@ -9,10 +9,10 @@ export function Contacto() {
   return (
     <section
       id="contacto"
-      className="scroll-mt-20 border-t border-negro-borde bg-negro-suave px-4 py-14 text-center"
+      className="scroll-mt-20 border-t border-cacao-borde bg-cacao-suave px-4 py-14 text-center"
       aria-label="Contacto y ubicación"
     >
-      <h2 className="font-display text-3xl tracking-wide text-rojo uppercase">
+      <h2 className="font-display text-3xl tracking-wide text-crema uppercase">
         Visítanos
       </h2>
       <div className="mt-4 space-y-1 text-gray-300">
@@ -20,13 +20,13 @@ export function Contacto() {
           href={urlMapa}
           target="_blank"
           rel="noreferrer"
-          className="block underline decoration-rojo/50 underline-offset-4 transition hover:text-white"
+          className="block underline decoration-crema/50 underline-offset-4 transition hover:text-nata"
         >
           {local.barrio}, {local.direccion}
         </a>
         <p>{local.ciudad}</p>
         <p className="text-sm text-gray-400">{local.horario}</p>
-        <p className="text-rojo">@{local.instagram}</p>
+        <p className="text-crema">@{local.instagram}</p>
       </div>
     </section>
   );

@@ -86,24 +86,24 @@ export function AdminPanel() {
   }
 
   return (
-    <div className="min-h-screen bg-negro px-4 py-10 text-white">
+    <div className="min-h-screen bg-cacao px-4 py-10 text-nata">
       <div className="mx-auto max-w-3xl">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-3">
-          <h1 className="font-display text-3xl text-rojo uppercase">
+          <h1 className="font-display text-3xl text-crema uppercase">
             Panel de administración
           </h1>
           <div className="flex gap-3">
             <button
               type="button"
               onClick={() => setCambiandoPassword(true)}
-              className="rounded-full bg-negro-suave px-4 py-2 text-sm ring-1 ring-negro-borde transition hover:ring-rojo/50"
+              className="rounded-full bg-cacao-suave px-4 py-2 text-sm ring-1 ring-cacao-borde transition hover:ring-crema/50"
             >
               Cambiar contraseña
             </button>
             <button
               type="button"
               onClick={cerrarSesion}
-              className="rounded-full bg-negro-suave px-4 py-2 text-sm ring-1 ring-negro-borde transition hover:ring-rojo/50"
+              className="rounded-full bg-cacao-suave px-4 py-2 text-sm ring-1 ring-cacao-borde transition hover:ring-crema/50"
             >
               Cerrar sesión
             </button>
@@ -129,7 +129,7 @@ export function AdminPanel() {
               <button
                 type="button"
                 onClick={() => setCategoriaEnEdicion({})}
-                className="rounded-full bg-negro-suave px-4 py-2 text-sm ring-1 ring-negro-borde transition hover:ring-rojo/50"
+                className="rounded-full bg-cacao-suave px-4 py-2 text-sm ring-1 ring-cacao-borde transition hover:ring-crema/50"
               >
                 + Nueva categoría
               </button>
@@ -138,14 +138,14 @@ export function AdminPanel() {
                   <button
                     type="button"
                     onClick={() => setCategoriaEnEdicion(categoriaActiva)}
-                    className="rounded-full bg-negro-suave px-4 py-2 text-sm ring-1 ring-negro-borde transition hover:ring-rojo/50"
+                    className="rounded-full bg-cacao-suave px-4 py-2 text-sm ring-1 ring-cacao-borde transition hover:ring-crema/50"
                   >
                     Editar categoría
                   </button>
                   <button
                     type="button"
                     onClick={() => manejarEliminarCategoria(categoriaActiva)}
-                    className="rounded-full bg-negro-suave px-4 py-2 text-sm text-rojo ring-1 ring-negro-borde transition hover:ring-rojo/50"
+                    className="rounded-full bg-cacao-suave px-4 py-2 text-sm text-crema ring-1 ring-cacao-borde transition hover:ring-crema/50"
                   >
                     Eliminar categoría
                   </button>
@@ -156,13 +156,13 @@ export function AdminPanel() {
             {categoriaActiva && (
               <>
                 <div className="mb-4 flex items-center justify-between">
-                  <h2 className="font-display text-2xl text-white uppercase">
+                  <h2 className="font-display text-2xl text-nata uppercase">
                     {categoriaActiva.nombre}
                   </h2>
                   <button
                     type="button"
                     onClick={() => setProductoEnEdicion("nuevo")}
-                    className="rounded-full bg-rojo px-4 py-2 text-sm font-semibold text-white uppercase transition hover:bg-rojo-oscuro"
+                    className="rounded-full bg-crema px-4 py-2 text-sm font-semibold text-cacao uppercase transition hover:bg-crema-oscura"
                   >
                     + Nuevo producto
                   </button>
@@ -172,7 +172,7 @@ export function AdminPanel() {
                   {categoriaActiva.productos.map((producto, indice) => (
                     <div
                       key={producto.id}
-                      className="flex items-center gap-4 rounded-xl bg-negro-suave p-4 ring-1 ring-negro-borde"
+                      className="flex items-center gap-4 rounded-xl bg-cacao-suave p-4 ring-1 ring-cacao-borde"
                     >
                       {producto.imagenUrl ? (
                         <img
@@ -181,15 +181,15 @@ export function AdminPanel() {
                           className="h-14 w-14 shrink-0 rounded-lg object-cover"
                         />
                       ) : (
-                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-rojo/30 to-negro text-2xl">
+                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-crema/30 to-cacao text-2xl">
                           {obtenerIconoCategoria(categoriaActiva.nombre)}
                         </div>
                       )}
                       <div className="flex-1">
-                        <p className="font-semibold text-white">
+                        <p className="font-semibold text-nata">
                           {producto.nombre}{" "}
                           {producto.destacado && (
-                            <span className="text-xs text-rojo">★ destacado</span>
+                            <span className="text-xs text-crema">★ destacado</span>
                           )}
                         </p>
                         <p className="text-sm text-gray-400">
@@ -202,7 +202,7 @@ export function AdminPanel() {
                           onClick={() => manejarMoverProducto(producto, "arriba")}
                           disabled={indice === 0}
                           title="Mover arriba"
-                          className="rounded-full bg-negro px-2 py-0.5 text-xs text-gray-400 ring-1 ring-negro-borde hover:text-white disabled:opacity-30"
+                          className="rounded-full bg-cacao px-2 py-0.5 text-xs text-gray-400 ring-1 ring-cacao-borde hover:text-nata disabled:opacity-30"
                         >
                           ↑
                         </button>
@@ -211,7 +211,7 @@ export function AdminPanel() {
                           onClick={() => manejarMoverProducto(producto, "abajo")}
                           disabled={indice === categoriaActiva.productos.length - 1}
                           title="Mover abajo"
-                          className="rounded-full bg-negro px-2 py-0.5 text-xs text-gray-400 ring-1 ring-negro-borde hover:text-white disabled:opacity-30"
+                          className="rounded-full bg-cacao px-2 py-0.5 text-xs text-gray-400 ring-1 ring-cacao-borde hover:text-nata disabled:opacity-30"
                         >
                           ↓
                         </button>
@@ -219,14 +219,14 @@ export function AdminPanel() {
                       <button
                         type="button"
                         onClick={() => setProductoEnEdicion(producto)}
-                        className="rounded-full bg-negro px-3 py-1.5 text-xs ring-1 ring-negro-borde transition hover:ring-rojo/50"
+                        className="rounded-full bg-cacao px-3 py-1.5 text-xs ring-1 ring-cacao-borde transition hover:ring-crema/50"
                       >
                         Editar
                       </button>
                       <button
                         type="button"
                         onClick={() => manejarEliminarProducto(producto)}
-                        className="rounded-full bg-negro px-3 py-1.5 text-xs text-rojo ring-1 ring-negro-borde transition hover:ring-rojo/50"
+                        className="rounded-full bg-cacao px-3 py-1.5 text-xs text-crema ring-1 ring-cacao-borde transition hover:ring-crema/50"
                       >
                         Eliminar
                       </button>

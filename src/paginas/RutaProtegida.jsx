@@ -13,7 +13,7 @@ export function RutaProtegida({ children }) {
 
   if (estado === "verificando") {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-negro text-gray-400">
+      <div className="flex min-h-screen items-center justify-center bg-cacao text-gray-400">
         Verificando sesión...
       </div>
     );

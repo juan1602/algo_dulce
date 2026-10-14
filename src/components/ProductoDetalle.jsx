@@ -4,13 +4,13 @@ import { urlImagen } from "../config";
 
 export function ProductoDetalle({ producto, categoriaNombre, onCerrar }) {
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-negro">
+    <div className="fixed inset-0 z-50 overflow-y-auto bg-cacao">
       <div className="relative mx-auto max-w-3xl">
         <button
           type="button"
           onClick={onCerrar}
           aria-label="Volver"
-          className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-full bg-negro-suave text-xl text-white ring-1 ring-negro-borde"
+          className="absolute top-4 left-4 flex h-10 w-10 items-center justify-center rounded-full bg-cacao-suave text-xl text-nata ring-1 ring-cacao-borde"
         >
           ←
         </button>
@@ -22,14 +22,14 @@ export function ProductoDetalle({ producto, categoriaNombre, onCerrar }) {
             className="aspect-square w-full object-cover"
           />
         ) : (
-          <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-rojo/30 to-negro-suave text-8xl">
+          <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-crema/30 to-cacao-suave text-8xl">
             {obtenerIconoCategoria(categoriaNombre)}
           </div>
         )}
 
         <div className="px-6 py-6">
           <p className="text-xs tracking-widest text-gray-500 uppercase">Producto</p>
-          <h2 className="mt-1 font-display text-3xl text-white uppercase">
+          <h2 className="mt-1 font-display text-3xl text-nata uppercase">
             {producto.nombre}
           </h2>
           {producto.descripcion && (
@@ -37,7 +37,7 @@ export function ProductoDetalle({ producto, categoriaNombre, onCerrar }) {
               {producto.descripcion}
             </p>
           )}
-          <p className="mt-6 text-2xl font-bold text-rojo">
+          <p className="mt-6 text-2xl font-bold text-crema">
             {formatPrecio(producto.precio)}
           </p>
         </div>

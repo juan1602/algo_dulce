@@ -21,7 +21,7 @@ export function SitioPublico() {
   }, [cargando]);
 
   return (
-    <div className="min-h-screen bg-negro">
+    <div className="min-h-screen bg-cacao">
       <StickyHeader />
       <Hero />
       <PlatosDestacados categorias={categorias} cargando={cargando} />
