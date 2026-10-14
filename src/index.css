@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-negro: #0c0b0a;
+  --color-negro-suave: #161413;
+  --color-negro-borde: #2a2a2a;
+  --color-rojo: #e3261b;
+  --color-rojo-oscuro: #a3170f;
+  --color-amarillo: #ffc629;
+  --color-hueso: #f4efe6;
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-sans: "Archivo", system-ui, sans-serif;
+  --font-marcador: "Permanent Marker", cursive;
+  /* La más parecida a la letra del letrero/logo del local. */
+  --font-letrero: "Barlow Condensed", sans-serif;
+
+  /* Cinta de texto que se desplaza sin fin: el contenido va duplicado,
+     así que al mover -50% queda exactamente donde empezó. */
+  --animate-marquesina: marquesina 16s linear infinite;
+  @keyframes marquesina {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+body {
+  @apply bg-negro font-sans text-hueso antialiased;
+}
+
+/* Fondo con textura de puntitos, como papel impreso. */
+@utility textura {
+  background-color: var(--color-negro);
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    radial-gradient(rgba(0, 0, 0, 0.55) 1px, transparent 1.2px);
+  background-size: 3px 3px, 5px 5px;
+  background-position: 0 0, 1px 2px;
+}
+
+/* Letras solo con el borde (sin relleno). */
+@utility texto-contorno {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color-hueso);
+}
+
+@utility texto-contorno-tenue {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.06);
+}
