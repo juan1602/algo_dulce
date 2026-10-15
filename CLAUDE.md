@@ -14,7 +14,7 @@ Los clientes entran casi siempre desde el celular (link de Instagram o QR).
 3. Carrito que arma el pedido y lo envía por WhatsApp.
 4. Pedidos en línea conectados al sistema del negocio.
 
-Las fases 1 y 2 ya vienen hechas del proyecto original; lo actual es adaptarlas a Algo Dulce.
+Las fases 1 y 2 vienen del proyecto original y ya están adaptadas a Algo Dulce. La fase 3 (carrito por WhatsApp, en `src/carrito/`) ya está hecha. Las ideas a futuro están en el README.
 
 ## Stack
 - Frontend: React + Vite, estilos con Tailwind CSS (colores de marca definidos como tema).
