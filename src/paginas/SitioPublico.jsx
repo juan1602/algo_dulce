@@ -5,6 +5,9 @@ import { Hero } from "../components/Hero";
 import { PlatosDestacados } from "../components/PlatosDestacados";
 import { Menu } from "../components/Menu";
 import { Contacto } from "../components/Contacto";
+import { CarritoProvider } from "../carrito/CarritoContext";
+import { BarraCarrito } from "../carrito/BarraCarrito";
+import { PanelPedido } from "../carrito/PanelPedido";
 
 export function SitioPublico() {
   const { categorias, cargando, error } = useMenu();
@@ -21,12 +24,17 @@ export function SitioPublico() {
   }, [cargando]);
 
   return (
-    <div className="min-h-screen bg-cacao">
-      <StickyHeader />
-      <Hero />
-      <PlatosDestacados categorias={categorias} cargando={cargando} />
-      <Menu categorias={categorias} cargando={cargando} error={error} />
-      <Contacto />
-    </div>
+    <CarritoProvider>
+      {/* pb-24 deja espacio para que la barra del carrito no tape el final de la página. */}
+      <div className="min-h-screen bg-cacao pb-24">
+        <StickyHeader />
+        <Hero />
+        <PlatosDestacados categorias={categorias} cargando={cargando} />
+        <Menu categorias={categorias} cargando={cargando} error={error} />
+        <Contacto />
+      </div>
+      <BarraCarrito />
+      <PanelPedido />
+    </CarritoProvider>
   );
 }

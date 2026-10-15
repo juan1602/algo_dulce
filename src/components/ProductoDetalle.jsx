@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { formatPrecio } from "../utils/formatPrecio";
 import { obtenerIconoCategoria } from "../utils/categoriaIconos";
 import { urlImagen } from "../config";
+import { BotonAgregar } from "../carrito/BotonAgregar";
 
 // En el celular ocupa toda la pantalla; desde "sm" (computador/tablet)
 // es una ventana flotante centrada con la foto a un lado y la información
@@ -73,6 +74,9 @@ export function ProductoDetalle({ producto, categoriaNombre, onCerrar }) {
           <p className="mt-6 text-2xl font-bold text-crema">
             {formatPrecio(producto.precio)}
           </p>
+          <div className="mt-6">
+            <BotonAgregar producto={producto} grande />
+          </div>
         </div>
       </div>
     </div>

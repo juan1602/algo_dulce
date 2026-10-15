@@ -2,6 +2,7 @@ import { useState } from "react";
 import { CategoriaExplorador } from "./CategoriaExplorador";
 import { ProductoDetalle } from "./ProductoDetalle";
 import { VistaRapida } from "./VistaRapida";
+import { BotonAgregar } from "../carrito/BotonAgregar";
 import { formatPrecio } from "../utils/formatPrecio";
 import { obtenerIconoCategoria } from "../utils/categoriaIconos";
 import { urlImagen } from "../config";
@@ -52,38 +53,45 @@ export function Menu({ categorias, cargando, error }) {
 
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
             {categoriaActiva.productos.map((producto) => (
-              <button
+              <article
                 key={producto.id}
-                type="button"
-                onClick={() => setProductoSeleccionado(producto)}
-                className="group overflow-hidden rounded-xl bg-cacao-suave text-left ring-1 ring-cacao-borde transition hover:ring-crema/50"
+                className="flex flex-col overflow-hidden rounded-xl bg-cacao-suave ring-1 ring-cacao-borde transition hover:ring-crema/50"
               >
-                <div className="relative">
-                  {producto.imagenUrl ? (
-                    <img
-                      src={urlImagen(producto.imagenUrl)}
-                      alt={producto.nombre}
-                      className="aspect-square w-full object-cover"
-                    />
-                  ) : (
-                    <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-crema/30 to-cacao-suave text-4xl">
-                      {obtenerIconoCategoria(categoriaActiva.nombre)}
-                    </div>
-                  )}
-                  <VistaRapida />
-                </div>
-                <div className="p-3">
-                  <p className="font-semibold text-nata">{producto.nombre}</p>
-                  {producto.descripcion && (
-                    <p className="mt-1 line-clamp-2 text-xs text-gray-400">
-                      {producto.descripcion}
+                <button
+                  type="button"
+                  onClick={() => setProductoSeleccionado(producto)}
+                  className="group flex flex-1 flex-col text-left"
+                >
+                  <div className="relative">
+                    {producto.imagenUrl ? (
+                      <img
+                        src={urlImagen(producto.imagenUrl)}
+                        alt={producto.nombre}
+                        className="aspect-square w-full object-cover"
+                      />
+                    ) : (
+                      <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-crema/30 to-cacao-suave text-4xl">
+                        {obtenerIconoCategoria(categoriaActiva.nombre)}
+                      </div>
+                    )}
+                    <VistaRapida />
+                  </div>
+                  <div className="p-3">
+                    <p className="font-semibold text-nata">{producto.nombre}</p>
+                    {producto.descripcion && (
+                      <p className="mt-1 line-clamp-2 text-xs text-gray-400">
+                        {producto.descripcion}
+                      </p>
+                    )}
+                    <p className="mt-1 font-bold text-crema">
+                      {formatPrecio(producto.precio)}
                     </p>
-                  )}
-                  <p className="mt-1 font-bold text-crema">
-                    {formatPrecio(producto.precio)}
-                  </p>
+                  </div>
+                </button>
+                <div className="px-3 pb-3">
+                  <BotonAgregar producto={producto} />
                 </div>
-              </button>
+              </article>
             ))}
           </div>
         </>
