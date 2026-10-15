@@ -24,7 +24,7 @@ export function PlatosDestacados({ categorias, cargando }) {
         Favoritos de la casa
       </h2>
       <p className="mx-auto mt-2 max-w-md text-sm text-gray-400">
-        Los favoritos de la casa
+        Lo que más piden nuestros clientes
       </p>
       <div className="mt-8 grid gap-5 sm:grid-cols-3">
         {destacados.map((producto) => (

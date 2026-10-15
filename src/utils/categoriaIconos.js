@@ -2,6 +2,7 @@ const iconos = {
   Meriendas: "🧇",
   "Opciones saludables": "🥗",
   "Bebidas calientes": "☕",
+  Malteadas: "🥤",
   "Algo Dulce": "🥤",
   "Jugos naturales": "🍹",
   Postres: "🍮",

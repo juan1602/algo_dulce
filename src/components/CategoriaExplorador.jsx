@@ -5,7 +5,7 @@ export function CategoriaExplorador({ categorias, idSeleccionada, onSeleccionar,
     <div>
       <p className="text-xs tracking-widest text-gray-500 uppercase">Explora</p>
       <h3 className="mb-3 font-display text-2xl text-nata uppercase">Categorías</h3>
-      <div className="-mx-4 flex gap-3 overflow-x-auto px-4 pb-2">
+      <div className="sin-barra -mx-4 flex gap-3 overflow-x-auto px-4 pb-2">
         {categorias.map((categoria) => {
           const activa = categoria.id === idSeleccionada;
           return (

@@ -22,3 +22,12 @@ body {
   @apply bg-cacao font-sans text-nata antialiased;
 }
 
+
+/* Oculta la barra de desplazamiento (se puede seguir deslizando con el dedo,
+   la rueda del mouse o el touchpad). Se usa en la fila de categorías. */
+@utility sin-barra {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
