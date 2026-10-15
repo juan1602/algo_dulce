@@ -26,7 +26,14 @@ export function Contacto() {
         </a>
         <p>{local.ciudad}</p>
         <p className="text-sm text-gray-400">{local.horario}</p>
-        <p className="text-crema">@{local.instagram}</p>
+        <a
+          href={`https://www.instagram.com/${local.instagram}/`}
+          target="_blank"
+          rel="noreferrer"
+          className="block text-crema transition hover:text-nata"
+        >
+          @{local.instagram}
+        </a>
       </div>
     </section>
   );
