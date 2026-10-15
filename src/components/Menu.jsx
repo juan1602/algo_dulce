@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { CategoriaExplorador } from "./CategoriaExplorador";
 import { ProductoDetalle } from "./ProductoDetalle";
+import { VistaRapida } from "./VistaRapida";
 import { formatPrecio } from "../utils/formatPrecio";
 import { obtenerIconoCategoria } from "../utils/categoriaIconos";
 import { urlImagen } from "../config";
@@ -55,19 +56,22 @@ export function Menu({ categorias, cargando, error }) {
                 key={producto.id}
                 type="button"
                 onClick={() => setProductoSeleccionado(producto)}
-                className="overflow-hidden rounded-xl bg-cacao-suave text-left ring-1 ring-cacao-borde transition hover:ring-crema/50"
+                className="group overflow-hidden rounded-xl bg-cacao-suave text-left ring-1 ring-cacao-borde transition hover:ring-crema/50"
               >
-                {producto.imagenUrl ? (
-                  <img
-                    src={urlImagen(producto.imagenUrl)}
-                    alt={producto.nombre}
-                    className="aspect-square w-full object-cover"
-                  />
-                ) : (
-                  <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-crema/30 to-cacao-suave text-4xl">
-                    {obtenerIconoCategoria(categoriaActiva.nombre)}
-                  </div>
-                )}
+                <div className="relative">
+                  {producto.imagenUrl ? (
+                    <img
+                      src={urlImagen(producto.imagenUrl)}
+                      alt={producto.nombre}
+                      className="aspect-square w-full object-cover"
+                    />
+                  ) : (
+                    <div className="flex aspect-square items-center justify-center bg-gradient-to-br from-crema/30 to-cacao-suave text-4xl">
+                      {obtenerIconoCategoria(categoriaActiva.nombre)}
+                    </div>
+                  )}
+                  <VistaRapida />
+                </div>
                 <div className="p-3">
                   <p className="font-semibold text-nata">{producto.nombre}</p>
                   {producto.descripcion && (

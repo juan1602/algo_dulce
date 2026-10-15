@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ProductoDetalle } from "./ProductoDetalle";
+import { VistaRapida } from "./VistaRapida";
 import { formatPrecio } from "../utils/formatPrecio";
 import { obtenerIconoCategoria } from "../utils/categoriaIconos";
 import { urlImagen } from "../config";
@@ -31,19 +32,22 @@ export function PlatosDestacados({ categorias, cargando }) {
             key={producto.id}
             type="button"
             onClick={() => setProductoSeleccionado(producto)}
-            className="overflow-hidden rounded-2xl bg-cacao-suave text-left ring-1 ring-cacao-borde transition hover:ring-crema/50"
+            className="group overflow-hidden rounded-2xl bg-cacao-suave text-left ring-1 ring-cacao-borde transition hover:ring-crema/50"
           >
-            {producto.imagenUrl ? (
-              <img
-                src={urlImagen(producto.imagenUrl)}
-                alt={producto.nombre}
-                className="aspect-video w-full object-cover"
-              />
-            ) : (
-              <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-crema/30 to-cacao-suave text-4xl">
-                {obtenerIconoCategoria(producto.categoriaNombre)}
-              </div>
-            )}
+            <div className="relative">
+              {producto.imagenUrl ? (
+                <img
+                  src={urlImagen(producto.imagenUrl)}
+                  alt={producto.nombre}
+                  className="aspect-video w-full object-cover"
+                />
+              ) : (
+                <div className="flex aspect-video items-center justify-center bg-gradient-to-br from-crema/30 to-cacao-suave text-4xl">
+                  {obtenerIconoCategoria(producto.categoriaNombre)}
+                </div>
+              )}
+              <VistaRapida />
+            </div>
             <div className="p-6">
               <h3 className="font-display text-2xl text-nata uppercase">
                 {producto.nombre}
