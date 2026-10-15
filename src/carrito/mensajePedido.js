@@ -6,7 +6,9 @@ import { formatPrecio } from "../utils/formatPrecio";
 export function armarMensajePedido({ items, total, datos, abierto }) {
   const lineas = [];
 
-  lineas.push("🧁 *Nuevo pedido – Algo Dulce*");
+  // Sin emojis: algunos (como 🧁) llegan dañados (�) a través del enlace wa.me,
+  // dependiendo de la versión de WhatsApp del celular.
+  lineas.push("*NUEVO PEDIDO – ALGO DULCE*");
   lineas.push("");
   lineas.push(`*Cliente:* ${datos.nombre.trim()}`);
   lineas.push(`*Teléfono:* ${datos.telefono.trim()}`);
