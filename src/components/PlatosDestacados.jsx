@@ -1,8 +1,12 @@
+import { useState } from "react";
+import { ProductoDetalle } from "./ProductoDetalle";
 import { formatPrecio } from "../utils/formatPrecio";
 import { obtenerIconoCategoria } from "../utils/categoriaIconos";
 import { urlImagen } from "../config";
 
 export function PlatosDestacados({ categorias, cargando }) {
+  const [productoSeleccionado, setProductoSeleccionado] = useState(null);
+
   const destacados = categorias.flatMap((categoria) =>
     categoria.productos
       .filter((producto) => producto.destacado)
@@ -23,9 +27,11 @@ export function PlatosDestacados({ categorias, cargando }) {
       </p>
       <div className="mt-8 grid gap-5 sm:grid-cols-3">
         {destacados.map((producto) => (
-          <article
+          <button
             key={producto.id}
-            className="overflow-hidden rounded-2xl bg-cacao-suave text-left ring-1 ring-cacao-borde"
+            type="button"
+            onClick={() => setProductoSeleccionado(producto)}
+            className="overflow-hidden rounded-2xl bg-cacao-suave text-left ring-1 ring-cacao-borde transition hover:ring-crema/50"
           >
             {producto.imagenUrl ? (
               <img
@@ -49,9 +55,17 @@ export function PlatosDestacados({ categorias, cargando }) {
                 {formatPrecio(producto.precio)}
               </p>
             </div>
-          </article>
+          </button>
         ))}
       </div>
+
+      {productoSeleccionado && (
+        <ProductoDetalle
+          producto={productoSeleccionado}
+          categoriaNombre={productoSeleccionado.categoriaNombre}
+          onCerrar={() => setProductoSeleccionado(null)}
+        />
+      )}
     </section>
   );
 }
