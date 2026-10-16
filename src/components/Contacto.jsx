@@ -1,9 +1,12 @@
 import { local } from "../data/local";
 
+// Si existe el enlace al perfil de Google Maps se usa ese (muestra fotos,
+// horario, opiniones y "Cómo llegar"); si no, se busca la dirección.
 const consultaMapa = encodeURIComponent(
   `${local.direccion}, ${local.barrio}, ${local.ciudad}`,
 );
-const urlMapa = `https://www.google.com/maps/search/?api=1&query=${consultaMapa}`;
+const urlMapa =
+  local.mapa ?? `https://www.google.com/maps/search/?api=1&query=${consultaMapa}`;
 
 export function Contacto() {
   return (

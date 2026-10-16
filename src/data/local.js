@@ -16,5 +16,7 @@ export const local = {
     cierra: "19:30",
   },
   whatsapp: "573153041912",
+  // Enlace al perfil de negocio en Google Maps (botón Compartir → Copiar vínculo).
+  mapa: "https://maps.app.goo.gl/KXwbBNJV4Kc5nvET6",
   instagram: "algodulce_sanmartin.cesar",
 };
