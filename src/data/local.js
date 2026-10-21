@@ -19,4 +19,5 @@ export const local = {
   // Enlace al perfil de negocio en Google Maps (botón Compartir → Copiar vínculo).
   mapa: "https://maps.app.goo.gl/KXwbBNJV4Kc5nvET6",
   instagram: "algodulce_sanmartin.cesar",
+  sitioWeb: "https://algo-dulce-chi.vercel.app",
 };

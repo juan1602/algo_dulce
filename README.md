@@ -21,7 +21,8 @@ Barrio Buenos Aires, Calle 17 # 13-26 · WhatsApp 315 304 1912 · Instagram [@al
   - Fuera del horario de atención se puede pedir igual, pero se avisa que se responderá al abrir.
   - El carrito y los datos del cliente se recuerdan en su navegador.
   - El 🧁 del título del mensaje se ve bien en la app del celular, pero en WhatsApp Web (PC) aparece como �. Se dejó así a propósito.
-- Sección "Visítanos" con dirección (enlace a Google Maps), horario e Instagram.
+- Sección "Visítanos" con dirección (enlace al perfil de Google Maps), horario e Instagram.
+- **Menú en PDF**: el botón "Descargar menú en PDF" (debajo de "Explora el menú") genera en el momento un PDF de 4 páginas con portada, logo, código QR a la página, datos para pedir y el menú completo con descripciones y precios. Siempre sale con los precios actuales porque se arma con los datos del panel. Código en `src/pdf/`; la librería (`@react-pdf/renderer`) solo se descarga cuando alguien toca el botón.
 
 **Para el negocio** (panel `/admin`, con usuario y contraseña):
 - Crear, editar, eliminar y reordenar categorías y productos; marcar destacados; subir fotos (Cloudinary); cambiar la contraseña.

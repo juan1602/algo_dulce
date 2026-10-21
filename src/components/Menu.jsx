@@ -3,6 +3,7 @@ import { CategoriaExplorador } from "./CategoriaExplorador";
 import { ProductoDetalle } from "./ProductoDetalle";
 import { VistaRapida } from "./VistaRapida";
 import { BotonAgregar } from "../carrito/BotonAgregar";
+import { BotonDescargarMenu } from "../pdf/BotonDescargarMenu";
 import { formatPrecio } from "../utils/formatPrecio";
 import { obtenerIconoCategoria } from "../utils/categoriaIconos";
 import { urlImagen } from "../config";
@@ -16,9 +17,12 @@ export function Menu({ categorias, cargando, error }) {
 
   return (
     <section id="menu" className="mx-auto max-w-3xl scroll-mt-20 px-4 pt-14 pb-16">
-      <h2 className="mb-8 text-center font-display text-4xl tracking-wide text-crema uppercase">
+      <h2 className="mb-4 text-center font-display text-4xl tracking-wide text-crema uppercase">
         Explora el Menú
       </h2>
+      <div className="mb-8">
+        <BotonDescargarMenu categorias={categorias} />
+      </div>
 
       {cargando && (
         <p className="text-center text-gray-400">Cargando menú...</p>
