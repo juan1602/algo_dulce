@@ -5,6 +5,7 @@ import { Hero } from "../components/Hero";
 import { PlatosDestacados } from "../components/PlatosDestacados";
 import { Menu } from "../components/Menu";
 import { Contacto } from "../components/Contacto";
+import { Credito } from "../components/Credito";
 import { CarritoProvider } from "../carrito/CarritoContext";
 import { BarraCarrito } from "../carrito/BarraCarrito";
 import { PanelPedido } from "../carrito/PanelPedido";
@@ -32,6 +33,7 @@ export function SitioPublico() {
         <PlatosDestacados categorias={categorias} cargando={cargando} />
         <Menu categorias={categorias} cargando={cargando} error={error} />
         <Contacto />
+        <Credito />
       </div>
       <BarraCarrito />
       <PanelPedido />
